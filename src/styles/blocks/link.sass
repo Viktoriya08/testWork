@@ -11,11 +11,13 @@
 	cursor: pointer
 
 	&__icon
-		color: inherit
+		color: var(--color-text)
 		width: rem(16)
 		height: rem(16)
 		transition: color .3s
 
 	@include hover
 		color: var(--color-second)
+		.link__icon
+			color: var(--color-second)
 
