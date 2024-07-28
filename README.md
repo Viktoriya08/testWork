@@ -1,8 +1,8 @@
 # Тестовое задание - Гнездилова Виктория
-https://viktoriya08.github.io/testWork/dist/
+[https://viktoriya08.github.io/testWork/dist/](https://viktoriya08.github.io/testWork/dist/)
 
 ### Макет -
-https://www.figma.com/design/RO6OFl74Z7HcmwLLx4W5si/Cedro%3Afront_test?node-id=8-181&t=Mn1qmhLr5Q9xoDna-0
+[https://www.figma.com/design/RO6OFl74Z7HcmwLLx4W5si/Cedro%3Afront_test?node-id=8-181&t=Mn1qmhLr5Q9xoDna-0](https://www.figma.com/design/RO6OFl74Z7HcmwLLx4W5si/Cedro%3Afront_test?node-id=8-181&t=Mn1qmhLr5Q9xoDna-0)
 
 
 ### Gulp-Vituum
