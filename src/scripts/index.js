@@ -3,11 +3,9 @@
 import initSliders from '@scripts/libs/sliders.js';
 import initInputMask from '@scripts/libs/input-mask';
 
-
 // MODULES
 import Popup from '@scripts/modules/popup';
 import addFavorits from '@scripts/modules/addFavorits';
-
 
 // webpAvifSupportChecker();
 

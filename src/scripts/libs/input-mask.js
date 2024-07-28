@@ -24,4 +24,3 @@ export default function initInputMask() {
   phoneMask.mask(document.querySelectorAll('input[type="tel"]'));
   emailMask.mask(document.querySelectorAll('input[data-email]'));
 }
-
