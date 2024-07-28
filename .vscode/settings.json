@@ -1,0 +1,56 @@
+{
+	"editor.snippetSuggestions": "top",
+	"npm.packageManager": "npm",
+	"npm.scriptExplorerAction": "run",
+	"editor.hover.enabled": false,
+	"workbench.startupEditor": "none",
+	"git.confirmSync": false,
+	"editor.renderWhitespace": "all",
+
+	"stylelint.validate": [
+		"css",
+		"less",
+		"postcss",
+		"sass"
+	],
+
+	"path-autocomplete.pathMappings": {
+		"img": "${folder}/src/assets/img",
+		"../img": "${folder}/src/assets/img",
+		"@img": "${folder}/src/assets/img",
+		"@sprite": "${folder}/src/assets/svg-sprite",
+		"@styles": "${folder}/src/styles",
+		"@scripts": "${folder}/src/scripts",
+		"@templates": "${folder}/src/templates"
+	},
+
+	"terminal.integrated.defaultProfile.windows": "Git Bash",
+	"[jade]": {
+		"editor.defaultFormatter": "ducfilan.pug-formatter"
+	},
+
+	//JS & TS
+	"javascript.suggestionActions.enabled": false,
+	"typescript.suggestionActions.enabled": false,
+	"javascript.updateImportsOnFileMove.enabled": "always",
+	"typescript.updateImportsOnFileMove.enabled": "always",
+
+	"files.exclude": {
+		".babelrc": true,
+		".gitignore": false,
+		".idea": true,
+		"dist": false,
+		"node_modules/": false,
+		"package-lock.json": false
+	},
+	"files.associations": {
+		"*.pug.html": "jade"
+	},
+	"javascript.preferences.quoteStyle": "double",
+	"typescript.preferences.quoteStyle": "double",
+	"javascript.format.semicolons": "remove",
+
+	"cssvar.postcssSyntax": {
+		"postcss-sass": ["sass"]
+	}
+}

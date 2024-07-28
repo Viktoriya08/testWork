@@ -1,0 +1,11 @@
+// Пример:
+// +image("../img/test", "jpg")
+// Сниппет: image
+
+@mixin image($image, $format)
+	@if $isDev
+		background-image: url("#{$image}.#{$format}")
+	@else
+		background-image: url("#{$image}.#{$format}")
+		.webp &
+			background-image: url("#{$image}.webp")

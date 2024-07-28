@@ -1,0 +1,45 @@
+.form
+	&__title
+		font-size: rem(20)
+		font-weight: 500
+		text-transform: uppercase
+		margin-bottom: rem(40)
+	&__inputs
+		margin: 0
+		display: grid
+		grid-gap: rem(24)
+		& +.form__inputs
+			margin-top: rem(24)
+			+until-tablet
+				margin-top: 0
+		&--2
+			grid-template-columns: repeat(2, 1fr)
+			+until-tablet
+				grid-template-columns: 100%
+				grid-gap: 0
+		&--3
+			grid-template-columns: repeat(3, 1fr)
+		&--4
+			grid-template-columns: repeat(4, 1fr)
+		&--5
+			grid-template-columns: repeat(5, 1fr)
+		&-input
+			&--2
+				grid-column: span 2
+			&--3
+				grid-column: span 3
+			&--4
+				grid-column: span 4
+
+	&__submit
+		display: flex
+		margin-top: rem(24)
+		+until-tablet
+			justify-content: space-between
+
+		.btn
+			&:not(:last-child)
+				margin-right: rem(12)
+				+until-tablet
+					margin-right: 0
+

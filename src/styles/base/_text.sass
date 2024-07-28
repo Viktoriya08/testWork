@@ -1,0 +1,270 @@
+/* stylelint-disable */
+p:not([class]), figure:not([class]), blockquote:not([class]),
+ul:not([class]), ol:not([class])
+	&:not(:last-child)
+		margin-bottom: rem(20)
+h2:not([class]), h3:not([class]), h4:not([class]), h5:not([class]), h6:not([class]), p:not([class]), img:not([class]), table:not([class]), ul:not([class]), ol:not([class])
+	&:first-child
+		margin-top: 0
+
+h2:not([class]), h3:not([class]), h4:not([class]), h5:not([class]), h6:not([class])
+	&:not(.block-title)
+		font-weight: 500
+		margin-bottom: rem(20)
+
+		&:not(:first-child)
+			margin-top: fluid(30, 50)
+
+	+ *
+		margin-top: 0
+
+h1:not([class])
+	font-size: em(40)
+	line-height: normal
+	text-transform: uppercase
+
+h2:not([class])
+	font-size: em(34)
+	line-height: normal
+	text-transform: uppercase
+
+h3:not([class])
+	font-size: fluid(22, 32)
+	line-height: normal
+	text-transform: uppercase
+
+h4:not([class])
+	font-size: fluid(18, 24)
+	line-height: normal
+	text-transform: uppercase
+
+h5:not([class])
+	font-size: fluid(16, 20)
+	line-height: normal
+	text-transform: uppercase
+
+p:not([class])
+	font-family: "roboto", sans-serif
+	font-size: fluid(14, 16)
+	line-height: 130%
+	font-weight: 400
+	&:not(:first-child)
+		padding-top: rem(5)
+	+ img
+		margin-top: fluid(10, 20)
+
+figure:not([class])
+	margin: 0
+
+blockquote:not([class])
+	font-family: "roboto", sans-serif
+	font-size: fluid(18, 24)
+	line-height: 130%
+	font-weight: 400
+	margin: 0
+	position: relative
+	> p
+		display: inline
+
+	+ figcaption
+		margin-top: fluid(15, 20)
+		font-size: fluid(14, 16)
+		line-height: 130%
+
+figcaption
+	font-family: "roboto", sans-serif
+	margin-top: rem(12)
+	color: var(--gray-dark)
+	font-size: rem(14)
+	line-height: 120%
+
+span:not([class])
+	font-family: "roboto", sans-serif
+	color: var(--gray-dark)
+	line-height: 120%
+
+img
+	&[height]
+		height: auto
+
+	// margin-top: fluid(10, 20)
+	// &:not(:last-child)
+	// 	margin-bottom: rem(12)
+
+	+ figcaption
+		margin-bottom: fluid(20, 40)
+
+
+
+table:not([class])
+	border-collapse: collapse
+	border: 0
+	background-color: transparent
+	font-size: em(14)
+	width: 100%
+	+until-tablet
+		width: rem(500)
+	thead
+		th, td
+			text-transform: uppercase
+			color: var(--gray-dark)
+			background-color: transparent
+			text-align: left
+			padding-top: rem(14)
+			padding-bottom: rem(14)
+			border-bottom: 1px solid var(--border)
+
+	td, th
+		padding: rem(24) rem(5) rem(24) 0
+		font-weight: inherit
+		border-bottom: 1px solid var(--border)
+		&:not([valign]), &[valign="middle"]
+			vertical-align: middle
+		&[valign="top"]
+			vertical-align: top
+		&[valign="bottom"]
+			vertical-align: bottom
+
+	tbody
+
+		td
+			line-height: 120%
+			&:not(:first-child)
+				font-family: "roboto", sans-serif
+
+			&:first-child
+				text-transform: uppercase
+				font-weight: 500
+
+table[border="1"]:not([class])
+	min-width: 100%
+	td, th
+		border: 1px solid
+
+	tbody
+		td
+			&:first-child
+				border-left: 0
+
+			&:last-child
+				border-right: 0
+		tr:last-child
+			td
+				border-bottom: 0
+
+ul:not([class]),
+ol:not([class])
+	font-family: "roboto", sans-serif
+	margin-top: rem(5)
+	&:not([class])
+		&:before
+			display: inline-block
+		ul, ol
+			margin-bottom: rem(20)
+			margin-top: rem(20)
+		li
+			&:before
+				margin-right: rem(10)
+
+			&:not(:first-child)
+				margin-top: rem(24)
+
+ul
+	&:not([class])
+		> li
+			padding-left: rem(50)
+			position: relative
+			&:before
+				content: ""
+				position: absolute
+				top: rem(10)
+				width: rem(24)
+				height: rem(2)
+				background-color: var(--gold)
+				left: 0
+				display: inline-block
+		ul
+			padding-top: rem(20)
+			> li
+				&:before
+					content: ""
+					display: inline-block
+					top: rem(10)
+					width: rem(6)
+					height: rem(6)
+					border-radius: 50%
+					background-color: var(--gold)
+					text-indent: 0
+					position: absolute
+					top: rem(10)
+					left: 0
+
+	&.dots
+		font-family: "roboto", sans-serif
+		&:not(:last-child)
+			margin-bottom: rem(20)
+		> li
+			padding-left: rem(50)
+			position: relative
+			&:not(:first-child)
+				margin-top: rem(24)
+			&:before
+				content: ""
+				position: absolute
+				top: rem(10)
+				width: rem(6)
+				height: rem(6)
+				border-radius: 50%
+				background-color: var(--gold)
+				left: 0
+				display: inline-block
+
+
+ol:not([class])
+	counter-reset: list
+	> li
+		padding-left: rem(45)
+		position: relative
+		&:before
+			content: counter(list)
+			counter-increment: list
+			position: absolute
+			top: 0
+			left: 0
+			width: rem(24)
+			height: rem(24)
+			background-color: var(--gold)
+			display: flex
+			align-items: center
+			justify-content: center
+			font-weight: 500
+			border-radius: 30px
+			font-size: em(14)
+
+a
+	&:not([class])
+		color: var(--color-text)
+		text-decoration: none
+
+.table-wrap
+	overflow: auto
+	-ms-overflow-style: none
+	scrollbar-width: none
+	&::-webkit-scrollbar
+		width: 0
+		height: 0
+
+mark
+	font-family: "roboto", sans-serif
+	background-color: transparent
+	font-size: fluid(18, 24)
+	line-height: 130%
+
+hr
+	width: 100%
+	display: block
+	height: rem(1)
+	background-color: var(--border)
+	margin: rem(40) 0 rem(24)
+	+until-tablet
+		margin: rem(24) 0 rem(24)

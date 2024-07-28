@@ -1,0 +1,11 @@
+{
+	"recommendations": [
+		"ionutvmi.path-autocomplete",
+		"EditorConfig.EditorConfig",
+		"rebornix.project-snippets",
+		"mrezechi3l.css-responsive",
+		"cipchk.cssrem",
+		"stylelint.vscode-stylelint",
+		"phoenisx.cssvar"
+	]
+}

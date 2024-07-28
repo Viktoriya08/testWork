@@ -1,0 +1,11 @@
+phpmailer/
+package-lock.json
+node_modules/
+.idea
+version.json
+**/*.zip
+**/*.zip
+**/*.rar
+_all.js
++.js
++.css

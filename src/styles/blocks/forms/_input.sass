@@ -1,0 +1,64 @@
+.default-input
+	display: flex
+	flex-direction: column-reverse
+	position: relative
+	flex: 1 1 auto
+	&__input, &__placeholder
+		font-size: rem(16)
+		line-height: 1.4
+		border: 1px solid var(--grey-400)
+		border-radius: 4px
+		height: rem(56)
+		color: inherit
+		background-color: var(--grey-400)
+		width: 100%
+		padding: rem(16)
+		transition: border-color .3s ease
+		+placeholder
+			color: var(--grey-200)
+			transition: color .3s ease
+		&:focus
+			border-color: $c-main
+		&:disabled
+			background-color: $c-second
+			pointer-events: none
+		&[readonly]
+			cursor: default
+			background-color: $c-second
+		&[required]
+			~ .default-input__label
+				&:after
+					content: " *"
+					color: $c-error
+
+		&.error
+			border-color: $c-error
+			~ .default-input
+				&__error
+					opacity: 1
+					display: block
+	&__input
+		@include hover()
+			+placeholder
+				color: var(--grey-300)
+
+	&__label
+		font-size: rem(16)
+		margin-bottom: rem(12)
+		color: var(--grey-200)
+	&__error
+		position: absolute
+		left: 0
+		top: 100%
+		margin-top: rem(5)
+		font-size: rem(12)
+		font-weight: 400
+		line-height: 1.2
+		color: $c-error
+		transition: opacity .3s ease
+		opacity: 0
+		display: none
+		pointer-events: none
+		order: -1
+
+

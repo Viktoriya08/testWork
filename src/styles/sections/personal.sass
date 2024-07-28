@@ -1,0 +1,78 @@
+.personal
+	border-bottom: 1px solid var(--grey)
+
+	&__wrapper
+		max-width: rem(1280)
+		margin: 0 auto
+
+	&__grid
+		display: grid
+		grid-template-columns: repeat(12, minmax(0, 1fr))
+
+	&__left
+		grid-column: 1/4
+		padding: fluid(40, 80)
+		padding-top: fluid(50, 112)
+		padding-right: rem(32)
+
+		+until-tablet
+			grid-column: 1/-1
+			padding: rem(8) rem(16)
+			border-bottom: 1px solid var(--grey)
+
+
+	&__right
+		grid-column: 4/-1
+		padding: fluid(40, 80) 0
+		padding-left: fluid(40, 95)
+		border-left: 1px solid var(--grey)
+		&:not(:last-child)
+			border-bottom: 1px solid var(--grey)
+
+		&:nth-child(2)
+			padding-top: fluid(50, 112)
+
+		+until-tablet
+			grid-column: 1/-1
+			border-left: none
+			padding: rem(32) rem(16)
+			&:nth-child(2)
+				padding: rem(32) rem(16)
+
+	&__form
+		grid-column: 4/-1
+
+		+until-tablet
+			grid-column: 1/-1
+
+		&-elem
+			padding: fluid(40, 80) 0
+			padding-left: fluid(40, 95)
+			border-left: 1px solid var(--grey)
+			&:not(:last-child)
+				border-bottom: 1px solid var(--grey)
+
+			+until-tablet
+				border-left: none
+				padding: rem(32) rem(16)
+
+		&-btn
+			min-width: rem(230)
+			+while-mob()
+				width: 100%
+
+	&__content
+		max-width: rem(545)
+
+	&__title
+		font-size: fluid(32, 80)
+		line-height: 1
+
+	&__subtitle
+		font-weight: 500
+		font-size: rem(24)
+		line-height: 1
+
+		&:not(:last-child)
+			margin-bottom: rem(48)
+

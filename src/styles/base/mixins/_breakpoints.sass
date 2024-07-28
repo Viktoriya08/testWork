@@ -1,0 +1,99 @@
+// сниппет: @md - max-width
+// сниппет: @mu - min-width
+
+@use 'sass:math'
+
+// Minimum breakpoint width. Null for the smallest (first) breakpoint.
+//
+//    >> breakpoint-min(sm, (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px))
+//    576px
+@function breakpoint-min($name, $breakpoints: $grid-breakpoints)
+	$min: map-get($breakpoints, $name)
+	@return if($min != 0, math.div($min, 16), null)
+
+// Maximum breakpoint width.
+// The maximum value is reduced by 0.02px to work around the limitations of
+// `min-` and `max-` prefixes and viewports with fractional widths.
+// See https://www.w3.org/TR/mediaqueries-4/#mq-min-max
+// Uses 0.02px rather than 0.01px to work around a current rounding bug in Safari.
+// See https://bugs.webkit.org/show_bug.cgi?id=178261
+//
+//    >> breakpoint-max(md, (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px))
+//    767.98px
+@function breakpoint-max($name, $breakpoints: $grid-breakpoints)
+	$max: map-get($breakpoints, $name)
+	@return if($max and $max > 0, math.div($max - 0.02, 16), null)
+
+// Media of at least the minimum breakpoint width. No query for the smallest breakpoint.
+// Makes the @content apply to the given breakpoint and wider.
+@mixin media-breakpoint-up($name, $breakpoints: $grid-breakpoints)
+	$min: breakpoint-min($name, $breakpoints)
+	@if $min
+		@media (min-width: $min)
+			@content
+	@else
+		@content
+
+// Media of at most the maximum breakpoint width. No query for the largest breakpoint.
+// Makes the @content apply to the given breakpoint and narrower.
+@mixin media-breakpoint-down($name, $breakpoints: $grid-breakpoints)
+	$max: breakpoint-max($name, $breakpoints)
+	@if $max
+		@media (max-width: $max)
+			@content
+	@else
+		@content
+
+// -==========================================================================================================
+
+@mixin from-mob()
+	@include media-breakpoint-up('mobile')
+		@content
+
+@mixin from-tablet()
+	@include media-breakpoint-up('tablet')
+		@content
+
+@mixin from-tablet-xl()
+	@include media-breakpoint-up('tablet-xl')
+		@content
+
+@mixin from-desktop()
+	@include media-breakpoint-up('laptop')
+		@content
+
+@mixin from-widescreen()
+	@include media-breakpoint-up('laptop-xxl')
+		@content
+
+@mixin from-widescreen-xl()
+	@include media-breakpoint-up('laptop-xxxl')
+		@content
+
+// -==========================================================================================================
+
+@mixin while-mob()
+	@include media-breakpoint-down('mobile')
+		@content
+
+@mixin until-tablet
+	@include media-breakpoint-down('tablet')
+		@content
+
+@mixin until-tablet-xl()
+	@include media-breakpoint-down('tablet-xl')
+		@content
+
+@mixin until-desktop()
+	@include media-breakpoint-down('laptop')
+		@content
+
+@mixin until-desktop-xl()
+	@include media-breakpoint-down('laptop-xl')
+		@content
+
+@mixin until-widescreen()
+	@include media-breakpoint-down('laptop-xxl')
+		@content
+
+// -==========================================================================================================

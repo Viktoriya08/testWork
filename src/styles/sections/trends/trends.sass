@@ -1,0 +1,22 @@
+.trends
+	overflow: hidden
+
+	&__slider
+		overflow: visible
+		+until-tablet
+			min-width: 0
+			width: 100%
+
+	&__top
+		+until-tablet
+			display: contents
+
+	&__link
+		+until-tablet
+			order: 2
+
+	&__wrapper
+		+until-tablet
+			display: flex
+			flex-direction: column
+			gap: rem(32)

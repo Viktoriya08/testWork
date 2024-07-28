@@ -1,0 +1,15 @@
+.page-section
+	padding: rem(112) 0 rem(112)
+
+	+until-tablet
+		padding: rem(35) 0 rem(35)
+
+	&__top
+		display: flex
+		justify-content: space-between
+		align-items: center
+		gap: rem(32)
+		margin-bottom: fluid(32, 48)
+		+until-tablet
+			flex-direction: column
+			align-items: flex-start

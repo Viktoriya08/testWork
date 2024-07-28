@@ -1,0 +1,118 @@
+.card
+	display: flex
+	height: auto
+	flex-direction: column
+	position: relative
+	overflow: hidden
+	background-color: var(--grey-400)
+	border-radius: 8px
+	border: 1px solid
+	border-color: var(--grey-400)
+	transition: border-color .3s
+
+	&:nth-child(4n+1)
+		.card__bottom
+			border-color: var(--brown-100)
+
+	&:nth-child(even)
+		.card__bottom
+			border-color: var(--brown-200)
+
+	&:nth-child(3n+0)
+		.card__bottom
+			border-color: var(--brown-300)
+
+	@include hover
+		border-color: var(--grey-200)
+		.card
+			&__name
+				color: var(--color-second)
+
+	&__top
+		position: absolute
+		top: rem(24)
+		left: rem(24)
+		right: rem(24)
+		display: flex
+		flex-wrap: wrap
+		justify-content: space-between
+		+until-tablet
+			top: rem(16)
+			left: rem(16)
+			right: rem(16)
+
+	&__head
+		position: relative
+		padding-top: 90%
+
+	&__picture
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		object-fit: contain
+
+		img
+			margin: 0 auto
+			display: block
+
+	&__bottom
+		border-top: 12px solid
+		border-color: var(--brown-100)
+		flex-grow: 1
+
+	&__content
+		padding: fluid(16, 24)
+		display: flex
+		flex-direction: column
+		gap: rem(8)
+		height: 100%
+
+	&__name
+		display: block
+		font-family: $secondFontFamily
+		font-style: italic
+		font-size: rem(18)
+		line-height: 1
+		font-weight: 700
+		transition: color .3s
+		overflow: hidden
+		text-overflow: ellipsis
+		text-decoration: none
+		+cutString(2)
+		&::after
+			content: ''
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+
+	&__info,
+	&__data
+		font-size: rem(14)
+		line-height: 1.2
+
+	&__box
+		display: flex
+		flex-wrap: wrap
+		gap: rem(8)
+		flex-grow: 1
+		align-items: flex-end
+		&:not(:first-child)
+			margin-top: rem(8)
+
+	&__price
+		font-family: $secondFontFamily
+		font-style: italic
+		font-size: rem(18)
+		line-height: 1
+		font-weight: 700
+
+		&--opacity
+			color: var(--grey-200)
+
+	&__fav
+		position: relative
+		z-index: 2

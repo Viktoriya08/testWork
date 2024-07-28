@@ -1,0 +1,29 @@
+.popup.main-menu#menu-popup
+
+	.main-menu__body
+		.main-menu__top
+			.main-menu__logo
+				a(href="#" title="CEDRO").main-menu__logo
+					+image('img/logo.svg', 'alt', false, 'main-menu__logo-img')
+			button(type="button").popup__close.main-menu__close
+
+		nav.main-menu__nav
+			.main-menu__box
+				.main-menu__title Продукция
+				ul.main-menu__list
+					each item in ['Пигменты', 'Пигменты', 'Аппараты', 'Иглы', 'Расходные материалы']
+						li.main-menu__item
+							a(href="#").main-menu__link=item
+
+			.main-menu__box
+				.main-menu__title Компания
+				ul.main-menu__list
+					each item in ['Блог', 'Обучение', 'Стать представителем', 'Контакты', 'Политика конфиденциальности']
+						li.main-menu__item
+							a(href="#").main-menu__link=item
+
+
+
+
+
+

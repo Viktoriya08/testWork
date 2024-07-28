@@ -1,0 +1,19 @@
+extends /base/_head
+block content
+	body.inner
+		.layout
+			//-HEADER
+			include /sections/_header
+			main.page
+
+				include /sections/personal
+
+				include /sections/trends
+
+			//-FOOTER
+			include /sections/_footer
+
+		//- POPUPS
+		include /popups/_all
+		//- SCRIPTS
+		include /base/_scripts

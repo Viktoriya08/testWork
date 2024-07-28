@@ -1,0 +1,47 @@
+section.personal
+	.personal__wrapper
+
+		.personal__grid
+
+			nav.personal__left
+				ul.elem-nav
+					li.elem-nav__item
+						a.elem-nav__link(href="#" title="Профиль") Профиль
+					li.elem-nav__item
+						a.elem-nav__link(href="#" title="Мои заказы") Мои заказы
+					li.elem-nav__item
+						a.elem-nav__link(href="#" title="выход") выход
+
+
+			.personal__right
+
+				.personal__content
+					h1.personal__title.title.title--h1 Профиль
+
+			form(action="#").personal__form.form
+
+				.personal__form-elem
+					.personal__content
+
+						h2.personal__subtitle Данные профиля
+
+						.form__inputs
+							.default-input
+								//- ошибка .error
+								input(type="text" placeholder="Ваше ФИО" value="Алексеева Ульяна Евгеньевна").default-input__input
+								label.default-input__label ФИО
+								.default-input__error Заполните поле
+
+							.default-input
+								input(type="text" placeholder="Ваш e-mail" value="pochta07@mail.ru").default-input__input
+								label.default-input__label Почта
+								.default-input__error
+
+							.default-input
+								input(type="tel" placeholder="Телефон" inputmode="numeric" value="+7 (999) 999-99-99").default-input__input
+								label.default-input__label Телефон
+								.default-input__error
+
+				.personal__form-elem
+					.personal__content
+						button(type="button").personal__form-btn.btn Сохранить изменения

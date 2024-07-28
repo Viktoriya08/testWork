@@ -1,0 +1,24 @@
+.elem-nav
+	display: flex
+	flex-direction: column
+	gap: rem(12)
+	+until-tablet
+		flex-direction: row
+
+	&__item
+		+until-tablet
+			&:last-child
+				flex-grow: 1
+				text-align: end
+
+	&__link
+		text-decoration: none
+		text-transform: uppercase
+		font-size: rem(14)
+		line-height: 1.4
+		font-weight: 500
+		color: var(--color-text)
+		transition:  color .3s
+
+		@include hover
+			color: var(--color-second)

@@ -1,0 +1,60 @@
+//- Пример img - +image('img/template.jpg', 'alt')
+//- сниппет: img
+//- Пример imgMedia - +image('img/template.jpg', 'alt', [{file:"img/template.jpg", mediaQuery:"max-width", breakpoint:"768"}])
+//- сниппет: imgMedia
+
+mixin image(file, alt="alt", items, mode)
+	- const [fileName, ext] = file.split(".")
+	if items
+		if isDev
+			picture.img(class=`${mode ? `${mode}` : ''}`)
+				each item in items
+					source(srcset=`${item.file}` media=`(${item.mediaQuery}: ${item.breakpoint}px)`)
+				img(src=`${file}` alt=`${alt}` loading='lazy')&attributes(attributes).img__image
+
+		else
+			picture.img(class=`${mode ? `${mode}` : ''}`)
+				each item in items
+					- const itemFileName = item.file.split(".")[0]
+					source(srcset=`${itemFileName}.webp` media=`(${item.mediaQuery}: ${item.mediaQuery === "max-width" ? (item.breakpoint - 0.02) / 16 : item.breakpoint / 16}em)` type="image/webp")
+					source(srcset=`${item.file}` media=`(${item.mediaQuery}: ${item.mediaQuery === "max-width" ? (item.breakpoint - 0.02) / 16 : item.breakpoint / 16}em)`)
+
+				source(srcset=`${fileName}.webp` type="image/webp")
+				img(src=`${file}` alt=`${alt}` loading='lazy')&attributes(attributes).img__image
+	else
+		if isDev
+			picture.img(class=`${mode ? `${mode}` : ''}`)
+				img(src=`${file}` alt=`${alt}` loading='lazy')&attributes(attributes).img__image
+		else
+			if ext === "svg"
+				img(src=`${file}` alt=`${alt}` loading='lazy')&attributes(attributes).img__image
+			else
+				picture.img(class=`${mode ? `${mode}` : ''}`)
+					source(srcset=`${fileName}.webp` type="image/webp")
+					img(src=`${file}` alt=`${alt}` loading='lazy' )&attributes(attributes).img__image
+
+//- Пример - +icon('@sprite/icon').i-icon
+//- сниппет: svg
+mixin icon(id)
+	- const itemFileName = id.split("/")[1]
+	if isDev
+		svg(aria-hidden="true")&attributes(attributes)
+			use(xlink:href=`assets/img/icons/icons.svg#svg-${itemFileName}`)
+	else
+		svg(aria-hidden="true")&attributes(attributes)
+			use(xlink:href=`./img/icons/icons.svg#svg-${itemFileName}`)
+
+//- Хлебные крошки
+mixin breadcrumbs(array,className)
+	ul.breadcrumbs(class=`${ className ? className : ''}` itemtype="https://schema.org/BreadcrumbList")
+		li.breadcrumbs__item(itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem")
+			a.breadcrumbs__link(href="/"  title="Главная" itemprop="item") Главная
+			meta(itemprop="position" content="0")
+		each breadcrumb, i in array
+			li.breadcrumbs__item(itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb")
+				a.breadcrumbs__link(href="#"  title=`${breadcrumb}` itemprop="item")=breadcrumb
+				meta(itemprop="position" content=`${i +1}`)
+
+
+
+include /blocks/card

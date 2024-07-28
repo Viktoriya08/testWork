@@ -1,0 +1,20 @@
+mixin card(sale, mode)
+
+	article.card(class=`${mode ? `${mode}` : ''}`)
+		.card__head
+			+image('img/card/card.png', 'alt', false, 'card__picture')
+			.card__top
+				if sale
+					.card__tag.tag!=sale
+				button(type="button").fav.card__fav.js-toggle-class
+					+icon('@sprite/fav-fill').fav__icon
+
+		.card__bottom
+
+			.card__content
+				a(href="#").card__name Brown to Blonde
+				.card__info Пигмент для бровей
+				.card__data 12 ml.
+				.card__box
+					.card__price 1 500 ₽
+					.card__price.card__price--opacity 3 000 ₽

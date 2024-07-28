@@ -1,0 +1,20 @@
+.fav
+	cursor: pointer
+
+	&:active
+		.fav__icon
+			color: var(--color-second)
+
+	&__icon
+		width: rem(24)
+		height: rem(24)
+		color: var(--grey)
+		transition: color .3s
+
+	@include hover
+		.fav__icon
+			color: var(--grey-500)
+
+	&.active
+		.fav__icon
+			color: var(--color-second)

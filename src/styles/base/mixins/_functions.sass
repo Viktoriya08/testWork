@@ -1,0 +1,90 @@
+@use "sass:math"
+// Гайд по em и rem: https://youtu.be/oJuVegSheQs
+
+// Percent
+@function percent($px, $from)
+	$result: math.div($px, $from) * 100%
+	@return $result
+
+// REM
+@function rem($px)
+	$result: math.div($px, 16) * 1rem
+	@return $result
+
+// EM
+@function em($px, $current: 16)
+	$result: math.div($px, $current) + em
+	@return $result
+
+
+
+// Оформление горизонтального скроллбара
+@mixin Hscroll()
+	scrollbar-color: $c-second $c-main
+	scrollbar-width: thin
+	&::-webkit-scrollbar /* 1 - скроллбар */
+		appearance: none
+		-webkit-appearance: none
+		&:horizontal
+			height: 10px
+	//&::-webkit-scrollbar-button  /* 2 - кнопка */
+	&::-webkit-scrollbar-track /* 3 - трек */
+		border-radius: 2px
+		background: $c-second
+	//&::-webkit-scrollbar-track-piece   /* 4 - видимая часть трека */
+	&::-webkit-scrollbar-thumb /* 5 - ползунок */
+		background-color: $c-main
+		border-radius: 2px
+		border: 3px solid $c-main
+
+// Оформление вертикального скроллбара
+@mixin Vscroll()
+	scrollbar-color: $c-second $c-main
+	scrollbar-width: thin
+	&::-webkit-scrollbar /* 1 - скроллбар */
+		width: 6px
+		appearance: none
+		-webkit-appearance: none
+	&::-webkit-scrollbar-track /* 3 - трек */
+		border-radius: 2px
+		background: $c-second
+	&::-webkit-scrollbar-thumb /* 5 - ползунок */
+		border-radius: 2px
+		background-color: $c-main
+		border: 2px solid $c-main
+
+//  Кроссбраузерный миксин для плейсхолдеров
+@mixin placeholder()
+	&::-webkit-input-placeholder
+		@content
+	&:-moz-placeholder
+		@content
+	&::-moz-placeholder
+		@content
+	&:-ms-input-placeholder
+		@content
+
+//  Скрыть горизонтальный скролл
+@mixin hide-scroll()
+	scrollbar-width: none !important
+	&::-webkit-scrollbar
+		appearance: none
+		-webkit-appearance: none
+		display: none
+		width: 0
+		&:horizontal
+			height: 0
+
+// Обрезаем строки
+@mixin cutString($count)
+	overflow: hidden
+	text-overflow: ellipsis
+	display: -webkit-box
+	-webkit-line-clamp: $count
+	-webkit-box-orient: vertical
+
+// Отключение ховеров в тач устройствах
+@mixin hover()
+	@media (hover: hover)
+		&:hover
+			@content

@@ -1,0 +1,96 @@
+{
+	"checkbox": {
+		"prefix": "checkbox",
+		"body": [
+			"label.${1:class}.checkbox",
+			"  input.checkbox__input(type=\"checkbox\")",
+			"  .checkbox__wrapper",
+			"    span.checkbox__box",
+			"    span.checkbox__title ${0:текст}"
+		]
+	},
+	"popup": {
+		"prefix": "popup",
+		"body": [
+			".popup#popup(aria-hidden='true')",
+			"  .popup__wrapper",
+			"    .popup__content",
+			"      button.popup__close(data-close) Закрыть",
+			"      $0"
+		]
+	},
+	"base layout": {
+		"prefix": "base",
+		"body": [
+			"extends /base/_head",
+			"block vars",
+			"  - var lang = 'ru'",
+			"  - var title = '${1}'",
+			"",
+			"block content",
+			"  body",
+			"    .layout",
+			"      include /sections/_header",
+			"      main.page.page_${2:main}",
+			"        ${0}",
+			"      include /sections/_footer",
+			"    include /base/_scripts"
+		],
+		"description": "Базовая разметка страницы"
+	},
+	"svg mixin": {
+		"prefix": "svg",
+		"body": ["+icon('@sprite/${1:icon}').i-${1:icon}"]
+	},
+	"Слайдер swiper": {
+		"prefix": "swiper",
+		"body": [
+			".$0-slider.swiper",
+			"  .$0-slider__wrapper.swiper-wrapper",
+			"    .$0-slider__slide.swiper-slide",
+			"  .$0-slider__pagination.swiper-pagination",
+			"  button.$0-slider__arrow$0-slider__arrow_prev.swiper-button-prev(type='button')",
+			"  button.$0-slider__arrow$0-slider__arrow_next.swiper-button-next(type='button')"
+		],
+		"description": "Базовая разметка Swiper"
+	},
+	"Add input tag": {
+		"prefix": "inp",
+		"body": "input.${1:input}(autocomplete=\"off\" type=\"text\" name=\"form[]\" data-error=\"Ошибка\" placeholder=\"\")>",
+		"description": "Добавляет input со настройками"
+	},
+	"Add container": {
+		"prefix": "cnt",
+		"body": ".${1:имя блока}__container\n\t$2",
+		"description": "Добавляет ограничивающий контейнер"
+	},
+	"Textarea": {
+		"prefix": "txta",
+		"body": "textarea.input(autocomplete='off' name='form[]' placeholder='' data-error='Ошибка')",
+		"description": "txta"
+	},
+	"Button": {
+		"prefix": "btn",
+
+		"body": "button.${1:btn}(type=\"submit\") ${2:Текст}",
+		"description": "submit"
+	},
+	"Button Item": {
+		"prefix": "bbtn",
+		"body": "button.${1:btn}(type=\"button\") ${2:Текст}",
+		"description": "button"
+	},
+	"Button Link": {
+		"prefix": "abtn",
+		"body": "a.${1:button}(href=\"${2:#}\" target=\"${3:_blank}\") ${4:Текст}",
+		"description": ""
+	},
+	"mixin image": {
+		"prefix": "img",
+		"body": ["+image('img$1', '${2:alt}')"]
+	},
+	"mixin image media": {
+		"prefix": "imgMedia",
+		"body": ["+image('img$1', '${2:alt}', {file:\"img$3\", mediaQuery:\"${4:max-width}\", breakpoint:\"${5:1024}\"})"]
+	}
+}

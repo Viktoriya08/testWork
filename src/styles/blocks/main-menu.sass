@@ -1,0 +1,75 @@
+.main-menu
+
+	background-color: var(--color-white)
+
+	&__body
+		width: 100%
+		height: 100%
+		display: flex
+		flex-direction: column
+		+from-tablet()
+			padding-right: rem(14)
+	&__nav
+		flex-grow: 1
+		display: grid
+		grid-template-columns: repeat(12, minmax(0, 1fr))
+		align-items: center
+		padding: 0 fluid(30, 80)
+		width: 100%
+		max-width: rem(1280)
+		margin: 0 auto
+		+until-tablet
+			margin-top: rem(32)
+			row-gap: rem(40)
+			align-items: flex-start
+			display: flex
+			flex-direction: column
+			padding: 0 rem(16)
+
+	&__box
+		grid-column: span 6
+		+until-tablet
+			grid-column: auto
+
+	&__top
+		display: flex
+		justify-content: space-between
+		gap: rem(8)
+		padding: rem(16) rem(32)
+		width: 100%
+		max-width: rem(1280)
+		margin: 0 auto
+		+until-tablet
+			padding: rem(16)
+
+	&__logo
+		display: block
+		max-width: rem(90)
+		img
+			display: block
+			width: 100%
+			height: 100%
+			object-fit: contain
+
+	&__title
+		font-weight: 500
+		font-size: fluid(20, 24)
+		margin-bottom: fluid(16, 24)
+
+	&__list
+		display: flex
+		flex-direction: column
+		gap: fluid(8, 16)
+
+	&__link
+		text-decoration: none
+		font-size: rem(16)
+		line-height: 1.4
+		color: var(--grey-300)
+		transition: color .3s
+
+		@include hover
+			color: var(--color-second)
+
+	&__close
+		position: static

@@ -1,0 +1,22 @@
+header.header
+	.header__container
+
+		.header__body
+			a(href="#" title="CEDRO").header__logo
+				+image('img/logo.svg', 'alt', false, 'header__logo-img')
+			.header__nav
+				a(href="tel:+88005553535").header__link
+					+icon('@sprite/tel').header__link-icon
+					.header__link-text 8 (800) 555-35-35
+
+				.header__box
+					a(href="#" title="Избранные товары").header__link.header__count
+						.header__count-info.js-count-fav 0
+						+icon('@sprite/fav').header__link-icon
+					a(href="#" title="Личный кабинет").header__link
+						+icon('@sprite/person').header__link-icon
+
+				button.burger.header__burger(data-popup="#menu-popup")
+					+icon('@sprite/burger').burger__icon
+
+

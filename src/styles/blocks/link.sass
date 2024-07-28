@@ -1,0 +1,21 @@
+.link
+	display: flex
+	align-items: center
+	gap: rem(8)
+	text-decoration: none
+	color: var(--color-text)
+	font-weight: 500
+	font-size: rem(16)
+	line-height: 1.4
+	transition: color .3s
+	cursor: pointer
+
+	&__icon
+		color: inherit
+		width: rem(16)
+		height: rem(16)
+		transition: color .3s
+
+	@include hover
+		color: var(--color-second)
+

@@ -1,0 +1,71 @@
+@use "sass:math"
+
+// НАСТРОЙКИ
+// Минимальная ширина страницы
+$minWidth: 320
+
+// Ширина полотна (макета)
+$maxWidth: 1280
+
+// Ширина ограничивающего контейнера (0 = нет ограничения)
+$maxWidthContainer: 1280
+
+// Общий отступ у контейнера
+// (30 = по 15px слева и справа, 0 = нет отступа)
+$containerPadding: 32
+
+// Ширина срабатывания первого брейкпоинта
+$containerWidth: $maxWidthContainer + $containerPadding
+
+// Шрифт по умолчанию
+$fontFamily: "roboto", sans-serif
+$secondFontFamily: "Times New Roman", sans-serif
+$fontSize: rem(16) // где 16(px) - размер шрифта по умолчанию из макета
+
+// Брейк-поинты
+// сниппет: @md - max-width
+// сниппет: @mu - min-width
+$pc: em($containerWidth) // ПК, ноутбуки, некоторые планшеты в горизонтальном положении
+$tablet: em(991.98) // Планшеты, некоторые телефоны в горизонтальном положении
+$mobile: em(767.98) // Телефоны L
+$mobileSmall: em(479.98) // Телефоны S
+$grid-breakpoints: ( 'mobile': 480em, 'tablet': 768em, 'tablet-xl': 992em, 'laptop': 1024em, 'laptop-xl': 1200em, 'laptop-xxl': 1400em, 'laptop-xxxl': 1950em , 'container': 1295em)
+
+// Оболочка
+.layout
+	display: flex
+	flex-direction: column
+	min-height: 100%
+	overflow: hidden
+	main
+		flex-grow: 1
+		position: relative
+		background-color: var(--body-bg-color)
+		overflow: hidden
+		z-index: 1
+
+
+.mobilemenu-opened, .popup-opened
+	overflow: hidden
+
+
+.popup-opened
+	.layout
+		+from-tablet()
+			width: calc(100% - 14px)
+
+
+.wrapper
+	@if ($maxWidthContainer > 0)
+		box-sizing: content-box
+		max-width: rem($maxWidthContainer)
+		margin: 0 auto
+		width: 100%
+
+	@if ($containerPadding > 0)
+		padding: 0 rem(math.div($containerPadding, 2))
+		+until-tablet
+			padding: 0 rem(15)
+
+
+

@@ -1,0 +1,30 @@
+.btn
+	color: var(--color-white)
+	text-decoration: none
+	cursor: pointer
+	display: block
+	font-size: rem(16)
+	line-height: 1.4
+	font-weight: 500
+	min-width: rem(200)
+	width: fit-content
+	padding: rem(16)
+	text-align: center
+	background-color: var(--dark)
+	border: 1px solid var(--dark)
+	border-radius: 4px
+	transition: .3s
+	@include hover()
+		background-color: var(--color-second)
+		border: 1px solid var(--color-second)
+		color: var(--color-white)
+
+	&:active
+		background-color: var(--color-second--100)
+		border-color: var(--color-second--100)
+
+	&.disabled,
+	&:disabled
+		background-color: var(--border)
+		border: 1px solid var(--border)
+		color: var(--gray-dark)

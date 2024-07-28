@@ -1,0 +1,161 @@
+/* stylelint-disable */
+*
+	margin: 0
+	padding: 0
+	border: 0
+	box-sizing: border-box
+
+html
+	scroll-behavior: smooth
+
+html,
+body
+	min-width: $minWidth + px
+	height: 100%
+
+body
+	font-family: $fontFamily
+	color: var(--color-text)
+	margin: 0 auto
+	background-color: var(--body-bg-color)
+	+Vscroll
+input,
+button,
+textarea
+	font-family: $fontFamily
+	font-size: inherit
+	color: inherit
+	border-radius: 0
+	box-shadow: none
+
+select,
+input,
+textarea,
+button
+	appearance: none
+
+	&:focus
+		outline: none
+
+	&:focus-visible
+		outline: none
+
+	&:active
+		outline: none
+
+button
+	font-weight: inherit
+	color: inherit
+	background-color: inherit
+	cursor: pointer
+
+textarea
+	resize: vertical
+
+input[type="color"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="month"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="time"],
+input[type="url"],
+input[type="week"],
+input:not([type]),
+textarea,
+select,
+input[type="submit"],
+button
+	--webkit-appearance: none
+
+	appearance: none
+	font-family: inherit
+
+input[type="number"]
+	appearance: none
+	&::-webkit-outer-spin-button,
+	&::-webkit-inner-spin-button
+		-moz-appearance: textfield
+		-webkit-appearance: none
+		appearance: none
+
+input[type="date"],
+input[type="time"]
+	&::-webkit-calendar-picker-indicator
+		opacity: 0
+
+	&::-webkit-date-and-time-value
+		text-align: left
+
+/* перебить стили автозаполнения */
+input
+	&:-webkit-autofill
+		--webkit-animation-name: autofill
+		--webkit-animation-fill-mode: both
+		--webkit-box-shadow: 0 0 0 30px #fff inset !important
+		&:hover,
+		&:focus,
+		&:active
+			--webkit-box-shadow: 0 0 0 30px #fff inset !important
+
+	&:-internal-autofill-selected
+		color: inherit !important
+		background-color: #fff !important
+
+*::selection
+	color: $c-black
+	background: $c-second
+
+a
+	color: inherit
+	+hover
+		text-decoration: none
+
+	&-webkit-any-link:focus-visible
+		outline-offset: 0
+
+	&:focus-visible
+		outline: none
+
+	&[href^="tel"]
+		white-space: nowrap
+
+p,
+figure,
+blockquote
+	color: inherit
+	margin: 0
+	padding: 0
+
+ul,
+ol
+	list-style: none
+
+img
+	vertical-align: top
+	max-width: 100%
+
+video,
+iframe,
+svg
+	max-width: 100%
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+	font-weight: inherit
+	font-size: inherit
+	margin: 0
+	padding: 0
+
+address
+	font-style: unset
+/* stylelint-enable */

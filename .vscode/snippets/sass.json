@@ -1,0 +1,242 @@
+{
+	"media 480 up": {
+		"prefix": "@mu7",
+		"body": ["@include media-breakpoint-up(mobile)", "  $0"]
+	},
+	"media 768 up": {
+		"prefix": "@mu6",
+		"body": ["@include media-breakpoint-up(tablet)", "  $0"]
+	},
+	"media 992 up": {
+		"prefix": "@mu5",
+		"body": ["@include media-breakpoint-up(tablet-xl)", "  $0"]
+	},
+	"media 1024 up": {
+		"prefix": "@mu4",
+		"body": ["@include media-breakpoint-up(laptop)", "  $0"]
+	},
+	"media 1200 up": {
+		"prefix": "@mu3",
+		"body": ["@include media-breakpoint-up(laptop-xl)", "  $0"]
+	},
+	"media 1400 up": {
+		"prefix": "@mu2",
+		"body": ["@include media-breakpoint-up(laptop-xxl)", "  $0"]
+	},
+	"media container up": {
+		"prefix": "@mu1",
+		"body": ["@include media-breakpoint-up(container)", "  $0"]
+	},
+	"media 480 down": {
+		"prefix": "@md7",
+		"body": ["@include media-breakpoint-down(mobile)", "  $0"]
+	},
+	"media 768 down": {
+		"prefix": "@md6",
+		"body": ["@include media-breakpoint-down(tablet)", "  $0"]
+	},
+	"media 992 down": {
+		"prefix": "@md5",
+		"body": ["@include media-breakpoint-down(tablet-xl)", "  $0"]
+	},
+	"media 1024 down": {
+		"prefix": "@md4",
+		"body": ["@include media-breakpoint-down(laptop)", "  $0"]
+	},
+	"media 1280 down": {
+		"prefix": "@md3",
+		"body": ["@include media-breakpoint-down(laptop-xl)", "  $0"]
+	},
+	"media 1400 down": {
+		"prefix": "@md2",
+		"body": ["@include media-breakpoint-down(laptop-xxl)", "  $0"]
+	},
+	"media container down": {
+		"prefix": "@md1",
+		"body": ["@include media-breakpoint-down(container)", "  $0"]
+	},
+	"Медиа запрос desktop first": {
+		"prefix": "@md",
+		"body": ["@include media-breakpoint-down($1)", "  $0"]
+	},
+	"Медиа запрос mobile first": {
+		"prefix": "@mu",
+		"body": ["@include media-breakpoint-up($1)", "  $0"]
+	},
+	"Adaptiv Value": {
+		"prefix": "av",
+		"body": ["fluid(${1:min}, ${2:max})"],
+		"description": "Адаптивное свойство: начальное значение, конечное значение, ширина начальная, ширина конечная"
+	},
+	"background-image": {
+		"prefix": "image",
+		"body": ["@include image(\"../img/$1\", \"${2:jpg}\")"],
+		"description": "Миксин background-image для добавления webp, avif"
+	},
+	"Font Size in REM": {
+		"prefix": "fz",
+		"body": ["font-size: rem($0)"],
+		"description": "Переводит PX в REM"
+	},
+	"Width": {
+		"prefix": "w",
+		"body": ["width: rem($0)"],
+		"description": "Переводит PX в REM"
+	},
+	"Height": {
+		"prefix": "h",
+		"body": ["height: rem($0)"],
+		"description": "Переводит PX в REM"
+	},
+	"margin": {
+		"prefix": "m",
+		"body": ["margin: rem(${1:0})"]
+	},
+	"Внешний отступ": {
+		"prefix": "mm",
+		"body": ["margin: rem(${1:0}) rem(${2:0}) rem(${3:0}) rem(${4:0})"]
+	},
+	"margin top": {
+		"prefix": "mt",
+		"body": ["margin-top: rem($0)"],
+		"description": "margin top"
+	},
+	"margin bottom": {
+		"prefix": "mb",
+		"body": ["margin-bottom: rem($0)"],
+		"description": "margin bottom"
+	},
+	"margin left": {
+		"prefix": "ml",
+		"body": ["margin-left: rem($0)"],
+		"description": "margin left"
+	},
+	"margin right": {
+		"prefix": "mr",
+		"body": ["margin-right: rem($0)"],
+		"description": "margin right"
+	},
+	"mu": {
+		"prefix": "mu",
+		"body": ["margin: 0 auto"],
+		"description": "margin center"
+	},
+	"padding": {
+		"prefix": "p",
+		"body": ["padding: rem(${1:0})"]
+	},
+	"Внутренний отступ": {
+		"prefix": "pp",
+		"body": ["padding: rem(${1:0}) rem(${2:0}) rem(${3:0}) rem(${4:0})"]
+	},
+	"pt": {
+		"prefix": "pt",
+		"body": ["padding-top: rem($0)"],
+		"description": "padding top"
+	},
+	"pb": {
+		"prefix": "pb",
+		"body": ["padding-bottom: rem($0)"],
+		"description": "padding bottom"
+	},
+	"pl": {
+		"prefix": "pl",
+		"body": ["padding-left: rem($0)"],
+		"description": "padding left"
+	},
+	"pr": {
+		"prefix": "pr",
+		"body": ["padding-right: rem($0)"],
+		"description": "padding right"
+	},
+	"EM": {
+		"prefix": "em",
+		"body": ["em($1,$2)"],
+		"description": "Вызов миксина перевода в EM"
+	},
+	"REM": {
+		"prefix": "rm",
+		"body": ["rem($1)"],
+		"description": "Вызов миксина перевода в REM"
+	},
+	"background": {
+		"prefix": "bg",
+		"body": ["background: url(\"@img$0\") 0 0 no-repeat"]
+	},
+	"Межстрочный отступ": {
+		"prefix": "lh",
+		"body": ["line-height: math.div(${1:Отступ}, ${2:Размер шрифта})"]
+	},
+	"Анимация": {
+		"prefix": "aa",
+		"body": ["transition: ${1:all} .${2:3}s"]
+	},
+	"Not last-child": {
+		"prefix": "nlc",
+		"body": ["&:not(:last-child)\n\t$0"],
+		"description": "Исключая последний объект"
+	},
+	"br": {
+		"prefix": "br",
+		"body": ["border-radius: $0"],
+		"description": "br"
+	},
+	"lc": {
+		"prefix": "lc",
+		"body": ["&:last-child\n\t$0"],
+		"description": "lc"
+	},
+	"fc": {
+		"prefix": "fc",
+		"body": ["&:first-child\n\t$0"],
+		"description": "fc"
+	},
+	"nc": {
+		"prefix": "nc",
+		"body": ["&:nth-child($0)"],
+		"description": "nc"
+	},
+	"BeforeAfter": {
+		"prefix": "ba",
+		"body": ["&::before,&::after\n\tcontent:''\n\t$0"],
+		"description": "ba"
+	},
+	"After": {
+		"prefix": "a",
+		"body": ["&::after\n\tcontent:''\n\t$0"],
+		"description": "after"
+	},
+	"Before": {
+		"prefix": "b",
+		"body": ["&::before\n\tcontent:''\n\t$0"],
+		"description": "before"
+	},
+	"hv": {
+		"prefix": "hv",
+		"body": ["&:hover\n\t$0"],
+		"description": "hv"
+	},
+	"hhv": {
+		"prefix": "hhv",
+		"body": ["@media (any-hover: hover)\n\t&:hover\n\t\t$0"],
+		"description": "hhv"
+	},
+	"fbw": {
+		"prefix": "fbw",
+		"body": ["flex-wrap: wrap"],
+		"description": "fbw"
+	},
+	"fbd": {
+		"prefix": "fbd",
+		"body": ["flex-direction: column"],
+		"description": "fbd"
+	},
+	"проценты": {
+		"prefix": "prc",
+		"body": ["percent(${1:Размер}, ${2:Размер родителя})"]
+	},
+	"scale-mirrored": {
+		"prefix": "scale-mirrored",
+		"body": ["transform: scale(1, -1)"]
+	}
+}
