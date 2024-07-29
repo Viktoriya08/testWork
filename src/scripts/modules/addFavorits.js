@@ -8,7 +8,7 @@ export default function addFavorits() {
 
   blockClass.forEach((block) => {
     if (block.classList.contains('active')) {
-      count++;
+      count += 1;
       favorites.innerHTML = count;
     }
 
@@ -16,9 +16,9 @@ export default function addFavorits() {
       block.classList.toggle('active');
 
       if (block.classList.contains('active')) {
-        count++;
+        count += 1;
       } else {
-        count--;
+        count -= 1;
       }
 
       favorites.innerHTML = count;

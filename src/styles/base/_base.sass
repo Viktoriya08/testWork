@@ -8,7 +8,7 @@ $minWidth: 320
 $maxWidth: 1280
 
 // Ширина ограничивающего контейнера (0 = нет ограничения)
-$maxWidthContainer: 1280
+$maxWidthContainer: 1152
 
 // Общий отступ у контейнера
 // (30 = по 15px слева и справа, 0 = нет отступа)
@@ -57,7 +57,7 @@ $grid-breakpoints: ( 'mobile': 480em, 'tablet': 768em, 'tablet-xl': 992em, 'lapt
 
 .wrapper
 	@if ($maxWidthContainer > 0)
-		box-sizing: content-box
+		box-sizing: border-box
 		max-width: rem($maxWidthContainer)
 		margin: 0 auto
 		width: 100%
