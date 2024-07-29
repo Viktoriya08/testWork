@@ -14,17 +14,18 @@
 		display: grid
 		grid-template-columns: repeat(12, minmax(0, 1fr))
 		align-items: center
-		padding: 0 fluid(30, 80)
+		padding: 0 fluid(30, 80) rem(60)
 		width: 100%
 		max-width: rem(1280)
 		margin: 0 auto
+		overflow: auto
 		+until-tablet
 			margin-top: rem(32)
 			row-gap: rem(40)
 			align-items: flex-start
 			display: flex
 			flex-direction: column
-			padding: 0 rem(16)
+			padding: 0 rem(16) rem(60)
 
 	&__box
 		grid-column: span 6
